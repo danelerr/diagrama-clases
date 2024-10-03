@@ -1,0 +1,44 @@
+      /* Aquí puedes agregar tus estilos CSS */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #ccffcc; /* Verde claro */
+        color: #333;
+      }
+
+      h1 {
+        text-align: center;
+        color: #ff006a; /* Color del texto del título */
+      }
+
+      p {
+        text-align: center;
+        margin: 20px;
+      }
+
+      .imagen {
+        display: block;
+        margin: 20px auto;
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Estilo del botón */
+      .link-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
+        background-color:#797d7f ;
+        text-decoration: none;
+        border-radius: 5px;
+        text-align: center;
+        margin: 20px;
+        transition: background-color 0.3s ease;
+        float: right; /* Botón alineado a la derecha */
+      }
+
+      .link-button:hover {
+        background-color: #797d7f;
+      }

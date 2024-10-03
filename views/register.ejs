@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/css/registrar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Resgistrar | D. Secuencia</title>
+</head>
+<body>
+  <div class="login">
+    <div class="form-container">
+      <img src="resources/css/logo-app.svg" alt="logo" class="logo">
+      <h1 class="title" class="form" >Crear cuenta</h1>
+      <form action="/register" method="POST" class="form"> 
+        <div>
+            <label for="user" class="label" >Usuario</label>
+            <input type="text" name="user" class="input input-name" required tabindex="1" autofocus>
+
+            <label for="user" class="label">Nombre completo</label>
+            <input type="text" name="name"  class="input input-name" required tabindex="2">
+                
+            <label for="pass" class="label" >Contraseña</label>
+            <input type="password" name="pass" placeholder="*********" class="input input-password"  required tabindex="4">
+        </div>
+       
+        <input type="submit" class="primary-button login-button" value="Registrar">           
+      </form>		
+      <a href="login"">
+        <button class="secondary-button signup-button"> Volver </button>
+      </a> 
+    </div>
+  </div>
+ 		
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<% if (typeof alert != "undefined")  { %>
+ <script>
+ Swal.fire({
+   title:'<%= alertTitle %>',
+   text:'<%= alertMessage %>',
+   icon:'<%= alertIcon %>',
+   showConfirmButton: '<%= showConfirmButton %>',
+   timer: '<%= timer %>'
+ }).then(()=>{
+   window.location='/<%= ruta %>'
+ })
+ </script>
+<% } %>
+ </div>
+</body>
+</html>

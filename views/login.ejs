@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login | D. Secuencia</title>
+	<link rel="stylesheet" href="resources/css/login.css">
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="login">
+		<div class="form-container">
+			<img src="resources/css/logo-app.svg" alt="logo" class="logo">
+			<form action="auth" method="POST" class="form">
+
+				<label for="usuario" class="label">Nombre de usuario</label>
+				<input type="text" name="user" id="usuario" class="input input-email" placeholder="ejemplo" autofocus required>
+
+				<label for="password" class="label"> Contraseña </label>
+				<input type="password" class="input input-password"  name="pass" placeholder="*******" required>
+				<input type="submit"  class="primary-button login-button" value="Acceder">
+				<a href="">Olvidé mi contraseña</a>
+			</form>
+			<a href="register">
+				<button class="secondary-button signup-button"> Crear cuenta </button>
+			</a>
+		</div>
+	</div>	
+
+		
+		
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+	<% if (typeof alert != "undefined")  { %>
+	<script>
+		Swal.fire({
+		title:'<%= alertTitle %>',
+		text:'<%= alertMessage %>',
+		icon:'<%= alertIcon %>',
+		showConfirmButton: '<%= showConfirmButton %>',
+		timer: '<%= timer %>'
+		}).then(()=>{
+			window.location='/<%= ruta %>'
+		})
+	</script>
+	<% } %>
+</body>
+</html>

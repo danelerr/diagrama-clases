@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>DiagraSpring</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> 
+    <link rel="stylesheet" href="resources/css/proyecto.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap"
+        rel="stylesheet" />
+
+</head>
+
+<body>
+
+  <!-- Barra de navegación -->
+    <nav>
+        <img src="resources/css/icon_menu.svg" alt="menu" class="menu" />
+  
+        <div class="navbar-left">
+          <img src="resources/css/logo-app.svg" alt="logo" class="logo" />
+  
+          <ul>
+            <li>
+              <a href="/proyecto">Mis diagramas </a>
+            </li>
+            <li>
+              <a id="abrir-crear">Crear diagrama </a>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="navbar-right">
+          <ul>
+            <li class="navbar-email"> <%= name %> </li>
+            <li class="navbar-shopping-cart" style="width: 30px;">
+                <img class="img-profile rounded-circle"
+                src="resources/admin/img/undraw_profile_2.svg">
+            </li>
+          </ul>
+        </div>
+  
+        <div class="desktop-menu inactive">
+          <ul>
+            <li>
+              <a href="/" class="title">Mi cuenta</a>
+            </li>
+  
+            <li>
+              <a href="/logout">Cerrar sesion </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mobile-menu inactive">
+          <ul>
+            <li>
+              <a href="/proyecto">Mis diagramas </a>
+            </li>
+            <li>
+              <a id="abrir-crear2">Crear diagrama </a>
+            </li>
+          </ul>
+  
+          <ul>
+            <li>
+              <a href="/">Mi cuenta</a>
+            </li>
+          </ul>
+  
+          <ul>
+            <li>
+              <a href="/" class="email">  <%= name %> </a>
+            </li>
+            <li>
+              <a href="/logout" class="sign-out">Cerrar sesion </a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+    <aside id="shoppingCartContainer" class="inactive">
+    </aside>
+
+
+    <!-- El detalle de producto, tal vez para crear un nuevo proy-->
+    <aside id="productDetail" class="inactive">
+      <div class="product-detail-close">
+        <img src="resources/css/icon_close.png" alt="close" />
+      </div>
+
+      <img
+        src="https://img.freepik.com/premium-vector/black-stripes-with-green-lines-background_518299-7342.jpg?semt=ais_hybrid"
+        alt="bike"
+      />
+
+      <div class="product-info">
+
+        <p>Crear un nuevo diagrama</p>
+        <p>
+          Comienza aqui para empezar a crear diagramas de clases completamente colaborativos
+        </p>
+        <form action="/store" method="POST">
+          <label for="user" class="label">Nombre</label>
+          <input type="text" name="name" id="usuario" class="input input-email" placeholder="ejemplo" autofocus required>
+          <input type="submit"  class="primary-button login-button" value="Crear diagrama">
+        </form>
+      </div>
+    </aside>
+
+
+    
+    <section class="main-container">
+      <div style="padding-left: 2rem;">
+        <h1><strong>Proyectos</strong></h1>
+      </div>
+      <div class="cards-container">
+
+        <% proyect.forEach(function(project) { %>
+        <div class="product-card">
+          <img
+            src="https://www.researchgate.net/profile/Iwara-Arikpo/publication/271341309/figure/fig4/AS:759210509864962@1558021299670/Level-1-Class-Diagram-of-The-Project-Manager-V-10.png"
+            alt=""
+          />
+          <div class="product-info">
+            <div>
+              <a href="pizarra/<%= project.id %>"><%= project.name %></a>
+            </div>
+            <figure>
+              <button class="primary-button add-to-cart-button"  onclick="copyPageUrlinvitacion(`https://diagram-sequence.onrender.com/pizarra/<%= project.id %>`)">
+                Copiar URL
+              </button>
+            </figure>
+          </div>
+        </div>
+        <% }); %>
+
+
+
+      </div>
+    </section>
+
+<script>
+  function copyPageUrl() {
+    const pageUrl = window.location.href;
+    const tempInput = document.createElement('input');
+    document.body.appendChild(tempInput);
+    tempInput.value = pageUrl;
+    tempInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
+  }
+
+  function copyPageUrlinvitacion(url) {
+    const tempInput = document.createElement('input');
+    tempInput.value = url;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
+  }
+
+
+</script>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="resources/admin/vendor/jquery/jquery.min.js"></script>
+    <script src="resources/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="resources/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="resources/admin/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="resources/admin/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="resources/admin/js/demo/chart-area-demo.js"></script>
+    <script src="resources/admin/js/demo/chart-area-demo.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="resources/admin/js/proyecto.js"></script>
+
+</body>
+
+</html>
