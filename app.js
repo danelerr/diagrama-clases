@@ -8,7 +8,7 @@ app.use(express.json()); // Soporte para JSON
 
 // 3 - Configuración de dotenv
 const dotenv = require('dotenv');
-dotenv.config({ path: './env/.env' });
+dotenv.config({ path: './.env' });
 
 // 4 - Directorio de recursos estáticos
 app.use('/resources', express.static('public'));

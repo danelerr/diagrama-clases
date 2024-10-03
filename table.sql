@@ -14,5 +14,5 @@ CREATE TABLE proyecto (
     link VARCHAR(255) NOT NULL,
     user_id INT NOT NULL,
     objetos JSONB DEFAULT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (user_id) REFERENCES users(id)
 );
